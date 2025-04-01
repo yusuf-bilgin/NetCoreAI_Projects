@@ -1,11 +1,24 @@
 ﻿using System.Text;
 using System.Text.Json;
+using Microsoft.Extensions.Configuration;
 
 class Program
 {
     static async Task Main(string[] args)
     {
-        var apiKey = "Api key is here";
+        var config = new ConfigurationBuilder()
+            .SetBasePath(Directory.GetCurrentDirectory())
+            .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+            .Build();
+
+        var apiKey = config["ApiSettings:ApiKey"];
+
+        if (string.IsNullOrEmpty(apiKey))
+        {
+            Console.WriteLine("API Key bulunamadı! Lütfen appsettings.json dosyanızı kontrol edin.");
+            return;
+        }
+
         Console.WriteLine("Lütfer sormak istediğiniz sorunuzu yazınız...");
 
         var prompt = Console.ReadLine();
@@ -19,7 +32,7 @@ class Program
                 new { role = "system", content = "You are a helpful assistant." },
                 new { role = "user", content = prompt }
             },
-            max_tokens = 100
+            max_tokens = 500
         };
 
         var json = JsonSerializer.Serialize(requestBody);
