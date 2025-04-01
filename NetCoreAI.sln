@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreAI.Project01_ApiDemo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreAI.Project02_ApiConsumeUI", "NetCoreAI.Project02_ApiConsumeUI\NetCoreAI.Project02_ApiConsumeUI.csproj", "{B9E03F6E-7522-4470-AD13-F4704620D906}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreAi.Project03_RapidApi", "NetCoreAi.Project03_RapidApi\NetCoreAi.Project03_RapidApi.csproj", "{35716AC7-9F02-4D1C-A1A3-74641192EEEA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreAI.Project03_RapidApi", "NetCoreAi.Project03_RapidApi\NetCoreAI.Project03_RapidApi.csproj", "{35716AC7-9F02-4D1C-A1A3-74641192EEEA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreAI.Project04_OpenAiChat", "NetCoreAI.Project04_OpenAiChat\NetCoreAI.Project04_OpenAiChat.csproj", "{45287DDC-F5E2-441D-B44C-F159692DEE33}"
 EndProject
