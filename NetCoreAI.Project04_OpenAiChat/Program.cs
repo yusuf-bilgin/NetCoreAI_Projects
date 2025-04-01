@@ -23,7 +23,7 @@ class Program
 
         var prompt = Console.ReadLine();
         using var httpClient = new HttpClient();
-        httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer    {apiKey}");
+        httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {apiKey}");
 
         var requestBody = new
         {
