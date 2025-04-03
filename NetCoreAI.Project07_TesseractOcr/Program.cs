@@ -8,7 +8,15 @@ class Program
 
         while (true)
         {
-            Console.WriteLine("Karakter okuması yapılacak görsel yolu: ");
+            Console.WriteLine("Yeni bir görsel yolu girin veya çıkmak için ESC tuşuna basın.");
+            var key = Console.ReadKey(true);
+
+            if (key.Key == ConsoleKey.Escape)
+            {
+                Console.WriteLine("Çıkış yapılıyor...");
+                break;
+            }
+
             string imagePath = Console.ReadLine();
             Console.WriteLine();
 
@@ -38,14 +46,7 @@ class Program
                 Console.WriteLine($"Bir hata oluştu: {exception.Message}");
             }
 
-            Console.WriteLine("\nYeni bir görsel yolu girmek için bir tuşa basın. Çıkmak için ESC tuşuna basın.");
-            var key = Console.ReadKey(true);
-
-            if (key.Key == ConsoleKey.Escape)
-            {
-                Console.WriteLine("Çıkış yapılıyor...");
-                break;
-            }
+            
         }
     }
 }
