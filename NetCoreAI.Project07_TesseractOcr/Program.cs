@@ -26,27 +26,23 @@ class Program
                 continue;
             }
 
-            try
-            {
-                using (var engine = new TesseractEngine(tessDataPath, "eng", EngineMode.Default))
-                {
-                    using (var img = Pix.LoadFromFile(imagePath))
-                    {
-                        using (var page = engine.Process(img))
-                        {
-                            string text = page.GetText();
-                            Console.WriteLine("Görselden Okunan Metin: ");
-                            Console.WriteLine(text);
-                        }
-                    }
-                }
-            }
-            catch (Exception exception)
-            {
-                Console.WriteLine($"Bir hata oluştu: {exception.Message}");
-            }
-
-            
+            ImageToText(tessDataPath, imagePath);
+        }
+    }
+    static void ImageToText(string tessDataPath, string imagePath)
+    {
+        try
+        {
+            using var engine = new TesseractEngine(tessDataPath, "eng", EngineMode.Default);
+            using var img = Pix.LoadFromFile(imagePath);
+            using var page = engine.Process(img);
+            string text = page.GetText();
+            Console.WriteLine("Görselden Okunan Metin: ");
+            Console.WriteLine(text);
+        }
+        catch (Exception exception)
+        {
+            Console.WriteLine($"Bir hata oluştu: {exception.Message}");
         }
     }
 }
