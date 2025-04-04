@@ -34,8 +34,8 @@ class Program
         try
         {
             using var engine = new TesseractEngine(tessDataPath, "eng", EngineMode.Default);
-            using var img = Pix.LoadFromFile(imagePath);
-            using var page = engine.Process(img);
+            using var img = Pix.LoadFromFile(imagePath); //Gorselleri OCR icin uygun formata getirir.
+            using var page = engine.Process(img); //OCR motorunu baslatana ana bilesendir.
             string text = page.GetText();
             Console.WriteLine("Görselden Okunan Metin: ");
             Console.WriteLine(text);
