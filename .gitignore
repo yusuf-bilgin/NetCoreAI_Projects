@@ -362,3 +362,4 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 /NetCoreAI.Project04_OpenAiChat/appsetting.json
+/NetCoreAI.Project08_GoogleCloudVision/central-kit-455812-t1-d9ddd0f1f408.json
